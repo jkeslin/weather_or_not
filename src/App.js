@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import LocationForm from './components/LocationForm';
+import CurrentConditions from './components/CurrentConditions';
+import UnitToggle from './components/UnitToggle';
+import { WeatherProvider } from './components/WeatherContext';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Weather Or Not</h1>
       </header>
+      <main>
+        <WeatherProvider>
+          <UnitToggle />
+          <LocationForm />
+          <CurrentConditions />
+        </WeatherProvider>
+      </main>
+      <footer>
+        Created by Jeff Keslin
+      </footer>
     </div>
   );
 }
