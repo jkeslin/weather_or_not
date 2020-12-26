@@ -2,17 +2,16 @@ import './App.css';
 import LocationForm from './components/LocationForm';
 import CurrentConditions from './components/CurrentConditions';
 import UnitToggle from './components/UnitToggle';
+import TemperatureTolerances from './components/TemperatureTolerances';
 import { WeatherProvider } from './components/WeatherContext';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Weather Or Not</h1>
-      </header>
       <main>
         <WeatherProvider>
           <UnitToggle />
+          <TemperatureTolerances />
           <LocationForm />
           <CurrentConditions />
         </WeatherProvider>
