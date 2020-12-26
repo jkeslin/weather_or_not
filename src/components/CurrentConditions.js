@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { WeatherContext } from './WeatherContext';
+import { toFahrenheit, toCelsius } from '../helpers/conversionHelpers';
 
 const CurrentConditions = () => {
     const [value] = useContext(WeatherContext);
 
     const convertTemp = (temp) => {
-        if(value.displayUnits === '°C') return (temp - 273).toFixed();
-        return (1.8*(temp - 273) + 32).toFixed();
+        return value.displayUnits === '°C' ? toCelsius(temp) : toFahrenheit(temp);
     };
     
     if(value.tempMax === null) return <span></span>;

@@ -19,7 +19,7 @@ export default class TemperatureSlider extends Component {
                     {this.props.garment.name}
                 </Typography>
                 <Slider
-                    value={this.props.garment.value}
+                    value={this.props.garment.tempNeeded}
                     step={5}
                     marks
                     min={0}

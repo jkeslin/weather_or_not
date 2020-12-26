@@ -11,22 +11,22 @@ export default class TemperatureTolerances extends Component {
                 {   
                     id: 1,
                     name: 'Jacket',
-                    value: 60,
+                    tempNeeded: 60,
                 },
                 {
                     id: 2,
                     name: 'Hat',
-                    value: 60,
+                    tempNeeded: 60,
                 },
                 {
                     id: 3,
                     name: 'Scarf',
-                    value: 40,
+                    tempNeeded: 40,
                 },
                 {
                     id: 4,
                     name: 'Gloves',
-                    value: 40,
+                    tempNeeded: 40,
                 }
             ]
         };
@@ -35,13 +35,13 @@ export default class TemperatureTolerances extends Component {
     }
 
     handleTemperatureChange(id, newValue) {
-        this.setState(previous => ({ garments: this.updateValue(id, newValue, previous.garments) }));
+        this.setState(previous => ({ garments: this.updateTemp(id, newValue, previous.garments) }));
     }
 
-    updateValue(id, newValue, garments) {
+    updateTemp(id, newValue, garments) {
         return garments.map((garment) => {
             if(garment.id === id) {
-                garment.value = newValue;
+                garment.tempNeeded = newValue;
             }
             return garment;
         });
