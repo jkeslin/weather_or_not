@@ -16,7 +16,7 @@ const LocationForm = () => {
         event.preventDefault();
 
         axiosInstance
-            .get(`/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}`)
+            .get(`/weather?q=${city}`)
             .then(res => {
                 const { temp_max, temp_min, feels_like } = res.data.main;
                 setWeather(previous => ({
