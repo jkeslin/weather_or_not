@@ -6,14 +6,16 @@ import axiosInstance from '../helpers/axios';
 
 const LocationForm = () => {
     const [city, setCity] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [, setWeather] = useContext(WeatherContext);
 
     const handleChange = event => {
         setCity(event.target.value);
-    }
+    };
 
     const handleSubmit = event => {
         event.preventDefault();
+        setErrorMessage('');
 
         axiosInstance
             .get(`/weather?q=${city}`)
@@ -27,16 +29,24 @@ const LocationForm = () => {
                 }));
             })
             .catch(error => {
-                console.log(error);
-                console.log('OH NO');
+                setWeather(previous => ({ ...previous, tempMax: null, tempMin: null, feelsLike: null}));
+                setErrorMessage(error.response.data.message);
             });
-    }
+    };
 
     return (
         <form onSubmit={handleSubmit}>
             <Grid container direction="column" alignItems="center" spacing={5}>
                 <Grid item xs={12}>
-                    <TextField label="US City Name" variant="outlined" value={city} onChange={handleChange} />
+                    <TextField
+                        className="city-input"
+                        label="US City Name"
+                        variant="outlined"
+                        value={city}
+                        error={errorMessage}
+                        helperText={errorMessage}
+                        onChange={handleChange}
+                    />
                 </Grid>
                 <Grid item xs={12}>
                     <Button type="submit" color="primary" variant="contained">Get Current Conditions</Button>

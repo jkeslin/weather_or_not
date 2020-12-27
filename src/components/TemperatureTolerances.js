@@ -16,16 +16,16 @@ export default class TemperatureTolerances extends Component {
                 {
                     id: 2,
                     name: 'Hat',
-                    tempNeeded: 60,
+                    tempNeeded: 50,
                 },
                 {
                     id: 3,
                     name: 'Scarf',
-                    tempNeeded: 40,
+                    tempNeeded: 30,
                 },
                 {
                     id: 4,
-                    name: 'Gloves',
+                    name: 'Pair of Gloves',
                     tempNeeded: 40,
                 }
             ]
@@ -52,6 +52,9 @@ export default class TemperatureTolerances extends Component {
             <Grid container direction="column" alignItems="center" spacing={5}>
                 <Grid item xs={12}>
                     <WardrobeNeeds garments={this.state.garments} />
+                </Grid>
+                <Grid item xs={12}>
+                    <p>Set the temperatures at which you need the following items:</p>
                 </Grid>
                 <Grid item xs={12}>
                     {this.state.garments.map(garment =>

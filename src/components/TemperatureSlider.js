@@ -22,8 +22,8 @@ export default class TemperatureSlider extends Component {
                     value={this.props.garment.tempNeeded}
                     step={5}
                     marks
-                    min={0}
-                    max={100}
+                    min={-20}
+                    max={80}
                     valueLabelDisplay="auto"
                     onChange={this.handleChange}
                 />

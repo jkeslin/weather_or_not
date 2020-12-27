@@ -7,7 +7,7 @@ export const WeatherProvider = (props) => {
         tempMax: null,
         tempMin: null,
         feelsLike: null,
-        displayUnits: '°F'
+        displayUnits: 'f'
     });
 
     return (

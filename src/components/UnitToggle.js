@@ -10,7 +10,7 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 
-const options = ['°F', '°C'];
+const options = [{ unit: 'f', display: '°F' }, {unit: 'c', display: '°C' }];
 
 const UnitToggle = () => {
     const [,setWeather] = useContext(WeatherContext);
@@ -20,7 +20,7 @@ const UnitToggle = () => {
 
     const handleMenuItemClick = (index) => {
         setSelectedIndex(index);
-        setWeather(previous => ({ ...previous, displayUnits: options[index]}));
+        setWeather(previous => ({ ...previous, displayUnits: options[index].unit}));
         setOpen(false);
     };
 
@@ -37,12 +37,10 @@ const UnitToggle = () => {
         <Grid container direction="column" alignItems="flex-end" spacing={5}>
             <Grid item xs={12}>
                 <ButtonGroup variant="contained" color="primary" ref={anchorRef} aria-label="split button">
-                    <Button>{options[selectedIndex]}</Button>
+                    <Button>{options[selectedIndex].display}</Button>
                     <Button
                         color="primary"
                         size="small"
-                        aria-controls={open ? 'split-button-menu' : undefined}
-                        aria-expanded={open ? 'true' : undefined}
                         aria-label="select temperature units"
                         aria-haspopup="menu"
                         onClick={handleToggle}
@@ -50,17 +48,17 @@ const UnitToggle = () => {
                         <ArrowDropDownIcon />
                     </Button>
                 </ButtonGroup>
-                <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+                <Popper open={open} anchorEl={anchorRef.current} transition disablePortal>
                     <Paper>
                         <ClickAwayListener onClickAway={handleClose}>
-                            <MenuList id="split-button-menu">
+                            <MenuList>
                                 {options.map((option, index) => (
                                     <MenuItem
-                                        key={option}
+                                        key={option.unit}
                                         selected={index === selectedIndex}
                                         onClick={() => handleMenuItemClick(index)}
                                     >
-                                        {option}
+                                        {option.display}
                                     </MenuItem>
                                 ))}
                             </MenuList>

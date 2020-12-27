@@ -14,9 +14,21 @@ main {
   min-width: 300px;
 }
 
+.city-input input {
+  min-width: 300px;
+}
+
+.current-conditions h2 {
+  color: dodgerblue;
+}
+
+.current-conditions h3 {
+  color: dimgrey;
+}
+
 footer {
   padding: 2px;
-  min-height: 100px;
+  min-height: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
