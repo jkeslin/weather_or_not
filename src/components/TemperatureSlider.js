@@ -14,7 +14,7 @@ export default class TemperatureSlider extends Component {
 
     render() {
         return (
-            <div className="temperature-slider">
+            <div className="temperature-slider" data-testid="temperature-slider">
                 <Typography gutterBottom>
                     {this.props.garment.name}
                 </Typography>

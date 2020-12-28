@@ -14,7 +14,7 @@ main {
   min-width: 300px;
 }
 
-.city-input input {
+input#city-input  {
   min-width: 300px;
 }
 

@@ -34,7 +34,7 @@ const UnitToggle = () => {
     };
 
     return (
-        <Grid container direction="column" alignItems="flex-end" spacing={5}>
+        <Grid container direction="column" alignItems="flex-end" spacing={5} data-testid="unit-toggle">
             <Grid item xs={12}>
                 <ButtonGroup variant="contained" color="primary" ref={anchorRef} aria-label="split button">
                     <Button>{options[selectedIndex].display}</Button>

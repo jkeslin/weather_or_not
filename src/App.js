@@ -7,7 +7,7 @@ import { WeatherProvider } from './components/WeatherContext';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" data-testid="app">
       <main>
         <WeatherProvider>
           <UnitToggle />

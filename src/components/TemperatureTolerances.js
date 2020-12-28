@@ -49,7 +49,7 @@ export default class TemperatureTolerances extends Component {
 
     render() {
         return (
-            <Grid container direction="column" alignItems="center" spacing={5}>
+            <Grid container direction="column" alignItems="center" spacing={5} data-testid="temperature-tolerances">
                 <Grid item xs={12}>
                     <WardrobeNeeds garments={this.state.garments} />
                 </Grid>

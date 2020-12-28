@@ -35,15 +35,16 @@ const LocationForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} data-testid="location-form">
             <Grid container direction="column" alignItems="center" spacing={5}>
                 <Grid item xs={12}>
                     <TextField
-                        className="city-input"
+                        id="city-input"
                         label="US City Name"
+                        InputLabelProps={{ "aria-labelledby": 'city-input' }}
                         variant="outlined"
                         value={city}
-                        error={errorMessage}
+                        error={!!errorMessage}
                         helperText={errorMessage}
                         onChange={handleChange}
                     />

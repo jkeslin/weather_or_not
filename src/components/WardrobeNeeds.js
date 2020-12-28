@@ -2,13 +2,13 @@ import React, { useContext, useState, useEffect } from 'react';
 import { WeatherContext } from './WeatherContext';
 import { toFahrenheit, toCelsius } from '../helpers/conversionHelpers';
 
-const WardrobeNeeds = (props) => {
+const WardrobeNeeds = ({ garments }) => {
     const [wardrobe, setWardrobe] = useState([]);
     const [weather] = useContext(WeatherContext);
     
     useEffect(() => {
-        setWardrobe(props.garments.filter(garment => isGarmentNeeded(garment, weather)))},
-        [weather, props.garments]
+        setWardrobe(garments.filter(garment => isGarmentNeeded(garment, weather)))},
+        [weather, garments]
     );
 
     const isGarmentNeeded = (garment, weather) => {
