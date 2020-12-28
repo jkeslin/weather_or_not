@@ -5,6 +5,7 @@ import { toFahrenheit, toCelsius } from '../helpers/conversionHelpers';
 const CurrentConditions = () => {
     const [weather] = useContext(WeatherContext);
 
+    //Temperature data from API is in Kelvin
     const convertTemp = (temp) => {
         return weather.displayUnits === 'f' ? toFahrenheit(temp) : toCelsius(temp) ;
     };

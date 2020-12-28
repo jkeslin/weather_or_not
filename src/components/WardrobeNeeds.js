@@ -17,17 +17,11 @@ const WardrobeNeeds = ({ garments }) => {
             garment.tempNeeded >= toCelsius(weather.feelsLike);
     }
 
-    if (weather.feelsLike === null) {
-        return <h1>What Should I Wear Today?</h1>;
-    }
+    if (weather.feelsLike === null) return <h1>What Should I Wear Today?</h1>;
 
-    if (wardrobe.length === 0) {
-        return <h1>It's Warm! Go Outside!</h1>;
-    }
+    if (wardrobe.length === 0) return <h1>It's Warm! Go Outside!</h1>;
 
-    if (wardrobe.length === 1) {
-        return <h1>Put On A {<span>{wardrobe[0].name}!</span>}</h1>;
-    }
+    if (wardrobe.length === 1) return <h1>Put On A {<span>{wardrobe[0].name}!</span>}</h1>;
 
     return <h1>Put On A{
         wardrobe.map((item, index) => {
