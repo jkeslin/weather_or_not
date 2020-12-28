@@ -1,6 +1,6 @@
 # Weather Or Not
 
-Weather Or Not is an app built with React that tells you which winter clothing items you should wear based on the current 'feels like' temperature at your location.  Weather data is from the OpenWeatherMap API.
+**Weather Or Not is an app built with React that tells you which winter clothing items you should wear based on the current 'feels like' temperature at your location.  Weather data is from the OpenWeatherMap API.**
 
 To run the app use:
 
