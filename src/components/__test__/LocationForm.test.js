@@ -1,4 +1,4 @@
-import { render, screen, cleanup, fireEvent, getByDisplayValue } from '@testing-library/react';
+import { render, screen, cleanup, fireEvent } from '@testing-library/react';
 import LocationForm from './../LocationForm';
 import { WeatherContext } from './../WeatherContext';
 

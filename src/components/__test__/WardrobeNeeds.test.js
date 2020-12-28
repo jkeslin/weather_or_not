@@ -1,4 +1,4 @@
-import { render, screen, cleanup, fireEvent } from '@testing-library/react';
+import { render, screen, cleanup } from '@testing-library/react';
 import WardrobeNeeds from './../WardrobeNeeds';
 import { WeatherContext } from './../WeatherContext';
 

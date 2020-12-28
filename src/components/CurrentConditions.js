@@ -11,6 +11,7 @@ const CurrentConditions = () => {
     };
     
     if(weather.tempMax === null) return <span data-testid="no-weather"></span>;
+
     return (
         <div data-testid="current-conditions" className="current-conditions">
             <h2>Feels Like: {convertTemp(weather.feelsLike)}°</h2>
